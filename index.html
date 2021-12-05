@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smart watch</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        /* header style */
+
+        header{
+            width: 100%;
+            height: 10vh;
+            text-align: center;
+            background-color: rgb(36, 44, 66);
+        }
+        #logo{
+            width: 5%;
+        }
+
+        /* main style */
+
+        main{
+            width: 50%;
+            height: 90vh;
+            text-align: right;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0;
+            padding: 0;
+        }
+        #smartwatch{
+            box-sizing: border-box;
+            width: 50%;
+            height: 50vh;
+            margin-top: 10%;
+        }
+        #screen{
+            position: absolute;
+            top: 40%;
+            left: 33.2%;
+            color: white;
+            width: 5%;
+            height: 5%;
+            font-size: 45px;
+        }
+        #date{
+            position: absolute;
+            top: 47%;
+            left: 34.3%;
+            color: white;
+            width: 5%;
+            height: 5%;
+            font-size: 30px;
+        }
+        #heartscreen{
+            width: 4%;
+            height: 70px;
+            position: absolute;
+            top: 38%;
+            left: 35%;
+            display: none;
+        }
+        #heartvalue{
+            font-size: 35px;
+            color: white;
+            position: absolute;
+            top: 46%;
+            left: 36%;
+            display:none;
+        }
+        /* aside style */
+
+        aside{
+            width: 49%;
+            height: 90vh;
+            text-align: left;
+            display: inline-block;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        aside section{
+            box-sizing: border-box;
+        }
+        #section1 h1{
+            font-size:50px;
+            margin-top: 13%;
+            
+        }
+        #section1 p{
+            margin-top:-3% ;
+            font-size: 18px;
+            color: gray;
+        }
+        #section2 h2{
+            color: rgb(99, 97, 97);
+            font-size: 30px;
+        }
+        #section2 div{
+            display: inline-block;
+            width: 90px;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 2%;
+        }
+        #div1{
+            background-color: black;
+        }
+        #div2{
+            background-color: #ca3d22;
+        }
+        #div3{
+            background-color: #565681;
+        }
+        #div4{
+            background-color: #8a5362;
+        }
+        #section3 h2{
+            color: rgb(87, 84, 84);
+            font-size: 30px;
+        }
+        #section3 div{
+            width: 13%;
+            height: 35px;
+            margin-right: 2%;
+            border-radius: 5px;
+            background-color: rgb(179, 177, 176);
+            display: inline-block;
+            text-align: center;
+            padding-top: 1%;
+            box-sizing: border-box;
+        }
+        #section4 div{
+            width: 15%;
+            height: 40px;
+            font-size: 25px;
+            border-radius: 5px;
+            background-color: orange;
+            margin-top: 4%;
+            text-align: center;
+            padding-top: .5%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6vUb0beVpV9LXy4OqUCTH_SxuWCaH9QhWOg&usqp=CAU" alt="amazon logo">
+    </header>
+    <main>
+        <section>
+            <img id="smartwatch" src="https://i.imgur.com/Mplj1YR.png" alt="applewatch">
+            <div id="screen" ></div>
+            <div id="date" ></div>
+            <img id="heartscreen">
+            <div id="heartvalue">78</div>
+        </section>
+    </main>
+    <aside>
+        <section id="section1">
+            <h1>FitBit 19 - The Smartest Watch</h1>
+            <p>Commodi corporis ratione incidunt Lorem ipsum dolor sit amet consectetur.<br>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </section>
+        <section id="section2">
+            <h2>Select Color</h2>
+            <div id="div1"></div>
+            <div id="div2"></div>
+            <div id="div3"></div>
+            <div id="div4"></div>
+        </section>
+        <section id="section3">
+            <h2>Features</h2>
+            <div id="time">Time</div><div id="heartrate">Heart Rate</div>
+        </section>
+        <section id="section4">
+            <div>BUY NOW</div>
+        </section>
+    </aside>
+    <script>
+        var smartwatch=document.getElementById('smartwatch');
+        var blackwatch=document.getElementById('div1');
+        blackwatch.addEventListener('click',function(){
+            smartwatch.src="https://i.imgur.com/iOeUBV7.png";
+        });
+        var redwatch=document.getElementById('div2');
+        redwatch.addEventListener('click',function(){
+            smartwatch.src="https://i.imgur.com/PTgQlim.png";
+        });
+        var bluewatch=document.getElementById('div3');
+        bluewatch.addEventListener('click',function(){
+            smartwatch.src="https://i.imgur.com/Mplj1YR.png";
+        });
+        var purplewatch=document.getElementById('div4');
+        purplewatch.addEventListener('click',function(){
+            smartwatch.src="https://i.imgur.com/xSIK4M8.png";
+        });
+        var screen=document.getElementById('screen');
+        var heartrate=document.getElementById('heartrate');
+        var heartscreen=document.getElementById('heartscreen');
+        var heartvalue=document.getElementById('heartvalue');
+        var date=document.getElementById('date');
+        var timefunction=setInterval(function(){
+            var dateandtime=new Date();//you have to put this in interval else your value doesnot update
+            var screenvalue=dateandtime.getHours()+":"+dateandtime.getMinutes()+":"+dateandtime.getSeconds();
+            var datevalue=dateandtime.getDate()+"/"+(dateandtime.getMonth()+1)+"/"+dateandtime.getFullYear();
+            screen.innerHTML=screenvalue;
+            date.innerHTML=datevalue;
+        },1000);
+        heartrate.addEventListener('click',function(){
+            heartscreen.style.display="block";
+            heartvalue.style.display="block";
+            screen.style.display="none";
+            heartscreen.src="https://c.tenor.com/S_5CXPmzrlkAAAAj/love-you-heart.gif";
+
+        });
+        var time=document.getElementById('time');
+        time.addEventListener('click',function(){
+            heartscreen.style.display="none";
+            heartvalue.style.display="none";
+            screen.style.display="block";
+        })
+    </script>
+</body>
+</html>
